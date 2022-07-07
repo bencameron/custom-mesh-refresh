@@ -114,11 +114,14 @@ function addButton() {
 
 function refreshGraphics() {
     resetModelBuilder();
-    addCustomMeshes();
 
-    viewer.impl.invalidate(true, true);
+    setTimeout(() => {
+        addCustomMeshes();
 
-    resetView();            
+        viewer.impl.invalidate(true, true);
+    
+        resetView();            
+    }, 100);
 }
 
 function resetModelBuilder() {
